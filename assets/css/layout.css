@@ -8,7 +8,7 @@
   --margin-xxl: 64px;
   --margin-xxxl: 88px;
   --section-margin: 96px;
-  --main-margin-top: 134px;
+  --hero-margin-top: 134px;
   --two-min-column: 380px;
   --three-min-column: 360px;
   --footer-min-column: 340px;
@@ -46,14 +46,23 @@ body {
   margin-right: 0;
 }
 
-.bitad-container {
+.bitad-container,
+.bitad-hero .wp-block-group__inner-container {
   margin: 0 auto;
   padding: 0 var(--margin-xs);
   max-width: var(--max-width);
 }
 
-.bitad-main {
-  padding-top: var(--main-margin-top);
+.bitad-hero {
+  padding-top: var(--hero-margin-top);
+}
+
+.bitad-hero-image {
+  margin-bottom: var(--margin-xxl);
+}
+
+.bitad-hero-image img {
+  max-height: 333px;
 }
 
 .element {

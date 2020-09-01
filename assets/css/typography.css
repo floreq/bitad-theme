@@ -43,3 +43,25 @@ a {
 .bitad-button:hover {
   border-color: var(--color-blue);
 }
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  line-height: var(--line-height-xxl);
+  font-size: var(--font-size-xxl);
+  letter-spacing: 0.2px;
+  margin-bottom: var(--section-margin);
+}
+
+.bitad-hero-subtitle {
+  margin-bottom: var(--margin-l);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  letter-spacing: -0.1px;
+  font-weight: normal;
+}
