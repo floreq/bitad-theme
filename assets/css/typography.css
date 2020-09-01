@@ -1,0 +1,45 @@
+:root {
+  --root-font-size: 18px;
+  --font-size-xxl: 62px;
+  --line-height-xxl: 70px;
+  --font-size-xl: 48px;
+  --line-height-xl: 56px;
+  --font-size-l: 28px;
+  --line-height-l: 36px;
+  --font-size-m: 24px;
+  --line-height-m: 32px;
+  --font-size-s: 16px;
+  --line-height-s: 24px;
+
+  --color-white: #fff;
+  --color-blue: #4093cd;
+  --color-black: #16334f;
+
+  --max-width: 1208px;
+
+  --border: solid 2px #16334f;
+}
+
+html {
+  font-family: "PT Sans";
+  font-size: var(--root-font-size);
+  color: var(--color-black);
+}
+a {
+  text-decoration: none;
+  color: var(--color-blue);
+}
+.bitad-nav a {
+  color: var(--color-black);
+}
+.bitad-nav a:hover {
+  color: var(--color-blue);
+}
+.bitad-button {
+  padding: var(--margin-xxs) var(--margin-xs);
+  border: var(--border);
+  border-radius: 14px;
+}
+.bitad-button:hover {
+  border-color: var(--color-blue);
+}
