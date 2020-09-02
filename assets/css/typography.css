@@ -20,6 +20,17 @@
   --border: solid 2px #16334f;
 }
 
+@media all and (max-width: 781px) {
+  :root {
+    --font-size-m: 20px;
+    --line-height-m: 28px;
+    --font-size-xxl: 44px;
+    --line-height-xxl: 52px;
+    --font-size-xl: 34px;
+    --line-height-xl: 42px;
+  }
+}
+
 html {
   font-family: "PT Sans";
   font-size: var(--root-font-size);
