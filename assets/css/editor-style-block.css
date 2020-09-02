@@ -1,3 +1,8 @@
+.editor-styles-wrapper > * {
+  font-family: "PT Sans";
+  font-size: 18px;
+}
+
 .wp-block {
   max-width: 1208px;
 }
