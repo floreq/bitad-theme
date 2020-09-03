@@ -41,17 +41,22 @@ a {
   text-decoration: none;
   color: var(--color-blue);
 }
-.bitad-nav a {
+.bitad-nav a,
+.widget_nav_menu a {
   color: var(--color-black);
 }
-.bitad-nav a:hover {
+.bitad-nav a:hover,
+.widget_nav_menu a:hover,
+.bitad-button:hover {
   color: var(--color-blue);
 }
 
 .bitad-button {
+  display: inline-block;
   padding: var(--margin-xxs) var(--margin-xs);
   border: var(--border);
   border-radius: 14px;
+  color: var(--color-black);
 }
 .bitad-button:hover {
   border-color: var(--color-blue);
@@ -95,6 +100,11 @@ p {
   margin-bottom: var(--margin-xs);
 }
 
+.bitad-center .wp-block-group__inner-container > p,
+.half-right {
+  margin-bottom: var(--margin-xl);
+}
+
 .bitad-hero-subtitle {
   margin-bottom: var(--margin-l);
   font-size: var(--font-size-m);
@@ -119,5 +129,17 @@ p {
   margin-bottom: var(--margin-m);
 }
 .bitad-element > p {
+  margin-bottom: 0;
+}
+
+.bitad-organizers,
+.bitad-footer {
+  font-size: var(--font-size-s);
+}
+.bitad-footer p {
+  line-height: var(--line-height-s);
+  margin-bottom: var(--margin-m);
+}
+.bitad-footer p:last-of-type {
   margin-bottom: 0;
 }

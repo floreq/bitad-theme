@@ -5,3 +5,51 @@ Description: ?
 Version: 0.0.1
 Tags: bitad
 */
+
+/* GALLERIES */
+.gallery-caption {
+  display: block;
+  margin-top: 0.8em;
+}
+.widget_media_gallery .gallery {
+  display: grid;
+  grid-gap: var(--margin-m);
+  gap: var(--margin-m);
+  align-items: center;
+}
+.widget_media_gallery .gallery-item {
+  margin: 0;
+  padding: 0;
+}
+.widget_media_gallery .gallery-item .gallery-icon img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  width: 100%;
+  height: auto;
+}
+
+/* VANILLA GALLERIES */
+.gallery-columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.gallery-columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.gallery-columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.gallery-columns-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.gallery-columns-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+.gallery-columns-7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+.gallery-columns-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+.gallery-columns-9 {
+  grid-template-columns: repeat(9, 1fr);
+}

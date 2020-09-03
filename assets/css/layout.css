@@ -36,6 +36,12 @@
 
 body {
   margin: 0;
+  background-color: var(--color-white);
+}
+
+.wp-block-columns,
+.wp-block-image {
+  margin-bottom: 0;
 }
 
 .bitad-nav {
@@ -49,12 +55,14 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.bitad-nav-links {
+.bitad-nav-links,
+.widget_nav_menu ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-.bitad-nav-links li {
+.bitad-nav-links li,
+.widget_nav_menu ul li {
   display: inline-block;
   margin-right: var(--margin-m);
 }
@@ -88,6 +96,14 @@ body {
 }
 .bitad-hero-image img {
   max-height: 333px;
+}
+
+.bitad-footer {
+  padding: var(--section-margin) 0;
+  background: url(../images/gray-white-bg.svg), #ededed;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 85rem, auto;
 }
 
 figure {
@@ -133,6 +149,14 @@ figure {
   background-size: 83.6rem;
 }
 
+.bitad-center img,
+.bitad-center p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  width: 100%;
+}
+
 .bitad-elements {
   display: grid;
   grid-template-columns: repeat(
@@ -142,7 +166,9 @@ figure {
   grid-gap: var(--margin-xl);
   gap: var(--margin-xl);
 }
-.bitad-elements .bitad-element {
+.bitad-elements .bitad-element,
+.bitad-organizers .bitad-organizer,
+.bitad-organizer-profile .wp-block-column {
   margin: 0 !important;
 }
 
@@ -156,17 +182,38 @@ figure {
 .bitad-element .wp-block-image {
   margin-bottom: var(--margin-xs);
 }
-
-.bitad-center img,
-.bitad-center p {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 900px;
-  width: 100%;
+.bitad-element img {
+  width: auto;
+  height: 44px;
 }
-.bitad-center p,
-.half-right {
-  margin-bottom: var(--margin-xl);
+
+.bitad-organizers {
+  display: grid;
+  grid-gap: var(--margin-m);
+  gap: var(--margin-m);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--three-min-column), 1fr)
+  );
+  background-color: var(--color-white);
+}
+.bitad-organizer {
+  padding: var(--margin-m);
+}
+.bitad-organizer-profile {
+  display: grid;
+  grid-column-gap: var(--margin-xs);
+  column-gap: var(--margin-xs);
+  grid-template-columns: repeat(2, auto);
+  margin-bottom: var(--margin-xs);
+}
+.bitad-organizer-profile img {
+  width: 68px;
+  height: 68px;
+}
+.bitad-organizers p,
+.bitad-organizer-profile h4 {
+  margin-bottom: 0;
 }
 
 .half-right {
@@ -177,9 +224,31 @@ figure {
   margin-left: var(--margin-xs);
 }
 
-.wp-block-columns,
-.wp-block-image {
-  margin-bottom: 0;
+.bitad-sponsors-gallery ul {
+  align-items: center;
+  width: 100%;
+}
+.bitad-sponsors-gallery li {
+  flex-grow: 0 !important;
+}
+@media (min-width: 600px) {
+  .bitad-sponsors-gallery.columns-1 li,
+  .bitad-sponsors-gallery.columns-2 li {
+    width: calc(33.33333% - 10.66667px) !important;
+  }
+}
+@media (max-width: 599px) {
+  .bitad-sponsors-gallery.columns-1 li {
+    width: calc(50% - 16px) !important;
+  }
+}
+
+.bitad-footer-widgets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--section-margin);
+  gap: var(--section-margin);
+  margin-bottom: var(--section-margin);
 }
 
 /* Edit Wordpress Media Queries */
@@ -187,6 +256,9 @@ figure {
   .bitad-elements {
     grid-gap: var(--margin-m);
     gap: var(--margin-m);
+  }
+  .bitad-footer-widgets {
+    grid-template-columns: 1fr;
   }
 
   .half-right {
