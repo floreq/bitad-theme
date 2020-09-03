@@ -27,14 +27,6 @@ function bitad_theme_support()
 	add_theme_support('title-tag');
 
 	/**
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
-	add_theme_support('post-thumbnails');
-	set_post_thumbnail_size(1568, 9999);
-
-	/**
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
@@ -50,6 +42,15 @@ function bitad_theme_support()
 			'style',
 		)
 	);
+
+	/** 
+	 * Add theme support for selective refresh for widgets.
+	 * Available blue pen (edit on page) when in Customize Mode.
+	 */
+	add_theme_support('customize-selective-refresh-widgets');
+
+	// Add support for responsive embeds.
+	add_theme_support('responsive-embeds');
 
 	/**
 	 * Adds starter content to highlight the theme on fresh sites.
@@ -129,6 +130,34 @@ function bitad_setup()
 	add_action('customize_register', 'bitad_customize');
 }
 add_action('after_setup_theme', 'bitad_setup');
+
+/**
+ * Register widget areas.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function bitad_sidebar_registration()
+{
+	// Arguments used in all register_sidebar() calls.
+	$shared_args = array(
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>',
+		'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+		'after_widget'  => '</div></div>',
+	);
+	register_sidebar(
+		array_merge(
+			$shared_args,
+			array(
+				'name'        => __('Footer', 'bitad'),
+				'id'          => 'footer',
+				'description' => __('Widgets in this area will be displayed in the first column in the footer.', 'bitad'),
+			)
+		)
+	);
+}
+
+add_action('widgets_init', 'bitad_sidebar_registration');
 
 /**
  * Register and Enqueue Styles.

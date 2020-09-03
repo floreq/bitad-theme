@@ -17,6 +17,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 	<header>
 		<?php
 		if (has_nav_menu('primary')) {

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -9,8 +10,13 @@
  * @since Bitad 1.0
  */
 ?>
-			<footer>
-				<h1>Footer</h1>
-			</footer>
-	</body>
+
+<footer class="bitad-footer">
+	<div class="bitad-container">
+		<?php get_template_part('template-parts/footer-widgets'); ?>
+	</div>
+	<?php wp_footer(); ?>
+</footer>
+</body>
+
 </html>
