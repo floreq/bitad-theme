@@ -21,6 +21,13 @@ function bitad_get_starter_content()
 {
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content = array(
+		'widgets'     => array(
+			// Place one core-defined widgets in the first footer widget area.
+			'footer' => array(
+				'text_about',
+				'text_contact',
+			)
+		),
 		// Specify the core-defined pages to create and add custom thumbnails to some of them.
 		'posts'       => array(
 			'conference' => array(
@@ -284,86 +291,4 @@ function bitad_get_starter_content()
 	 * @param array $starter_content Array of starter content.
 	 */
 	return apply_filters('bitad_starter_content', $starter_content);
-	/**
-	 * Pre-configure and save a widget, designed for plugin and theme activation.
-	 * 
-	 * @link    http://wordpress.stackexchange.com/q/138242/1685
-	 *
-	 * @param   string  $sidebar    The database name of the sidebar to add the widget to.
-	 * @param   string  $name       The database name of the widget.
-	 * @param   mixed   $args       The widget arguments (optional).
-	 */
-
-	function set_widget($sidebar, $name, $args = array())
-	{
-		if (!$sidebars = get_option('sidebars_widgets'))
-			$sidebars = array();
-
-		// Create the sidebar if it doesn't exist.
-		if (!isset($sidebars[$sidebar]))
-			$sidebars[$sidebar] = array();
-
-		// Check for existing saved widgets.
-		if ($widget_opts = get_option("widget_$name")) {
-			// Get next insert id.
-			ksort($widget_opts);
-			end($widget_opts);
-			$insert_id = key($widget_opts);
-		} else {
-			// None existing, start fresh.
-			$widget_opts = array('_multiwidget' => 1);
-			$insert_id = 0;
-		}
-
-		// Add our settings to the stack.
-		$widget_opts[++$insert_id] = $args;
-		// Add our widget!
-		$sidebars[$sidebar][] = "$name-$insert_id";
-
-		update_option('sidebars_widgets', $sidebars);
-		update_option("widget_$name", $widget_opts);
-	}
-	set_widget(
-		'footer',
-		'nav_menu',
-		array(
-			'title' => 'Reset',
-			'filter' => false,
-		)
-	);
-	set_widget(
-		'footer',
-		'media_gallery',
-		array(
-			'title' => 'Reset',
-			'filter' => false,
-		)
-	);
-	set_widget(
-		'footer',
-		'text',
-		array(
-			'title' => 'Dane kontaktowe',
-			'text' => "Reset,\nWillowa 2,\nBielsko-Biała 43-300\n\n<a class=\"mail\" href=\"mailto:reset@ath.bielsko.pl\">reset@ath.bielsko.pl</a>",
-			'filter' => false,
-		)
-	);
-	set_widget(
-		'footer',
-		'text',
-		array(
-			'title' => 'Dołącz do nas',
-			'text' => "Zarejestruj się i zostań uczestnikiem konferencji Beskid IT Academic Day już teraz. Nie zwlekaj, miejsca są ograniczone.\n\n<a class=\"bitad-button\" href=\"http://localhost:8000/rejestracja/\">Rejestracja</a>",
-			'filter' => false,
-		)
-	);
-	set_widget(
-		'footer',
-		'text',
-		array(
-			'title' => 'Poznaj nas bliżej!',
-			'text' => "Znajdziesz nas również w mediach społecznościowych.",
-			'filter' => false,
-		)
-	);
 }
