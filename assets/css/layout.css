@@ -224,6 +224,19 @@ figure {
   margin-left: var(--margin-xs);
 }
 
+/* .bitad-sponsors-gallery ul {
+  display: grid;
+  grid-gap: var(--margin-m);
+  gap: var(--margin-m);
+  grid-template-columns: repeat(auto-fit, minmax(123px, auto));
+  margin-bottom: var(--margin-m);
+  align-items: center;
+}
+.bitad-sponsors-gallery .blocks-gallery-item {
+  width: 100% !important;
+  margin: 0;
+} */
+
 .bitad-sponsors-gallery ul {
   align-items: center;
   width: 100%;

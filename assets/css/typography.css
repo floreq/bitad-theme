@@ -42,11 +42,11 @@ a {
   color: var(--color-blue);
 }
 .bitad-nav a,
-.widget_nav_menu a {
+.bitad-footer-widgets .widget_nav_menu a {
   color: var(--color-black);
 }
 .bitad-nav a:hover,
-.widget_nav_menu a:hover,
+.bitad-footer-widgets .widget_nav_menu a:hover,
 .bitad-button:hover {
   color: var(--color-blue);
 }
