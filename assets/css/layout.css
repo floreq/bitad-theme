@@ -69,6 +69,42 @@ body {
 .bitad-nav-links li:last-child {
   margin-right: 0;
 }
+.bitad-footer-widgets .widget_nav_menu {
+  overflow-x: auto;
+}
+.bitad-footer-widgets .menu-footer-menu-container {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#bitad-hamburger {
+  display: none;
+  position: relative;
+  top: 2px;
+  width: 33px;
+  height: 19px;
+  cursor: pointer;
+}
+#bitad-hamburger .bitad-hamburger-inner,
+#bitad-hamburger .bitad-hamburger-inner::before,
+#bitad-hamburger .bitad-hamburger-inner::after {
+  position: absolute;
+  width: 33px;
+  height: 3px;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  background-color: var(--color-black);
+}
+#bitad-hamburger .bitad-hamburger-inner::before {
+  content: "";
+  top: 16px;
+}
+#bitad-hamburger .bitad-hamburger-inner::after {
+  content: "";
+  transition-property: transform, opacity;
+  top: 8px;
+}
 
 .bitad-container,
 .bitad-hero .wp-block-group__inner-container,
@@ -91,10 +127,17 @@ body {
   background-size: auto 760px;
   text-align: center;
 }
+.bitad-hero-image img,
+.custom-logo,
+.widget_media_gallery .gallery-item .gallery-icon img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
 .bitad-hero-image {
   margin-bottom: var(--margin-xxl);
 }
 .bitad-hero-image img {
+  height: auto;
   max-height: 333px;
 }
 
@@ -264,8 +307,10 @@ figure {
   margin-bottom: var(--section-margin);
 }
 
-/* Edit Wordpress Media Queries */
 @media (max-width: 781px) {
+  .no-scroll {
+    overflow: hidden;
+  }
   .bitad-elements {
     grid-gap: var(--margin-m);
     gap: var(--margin-m);
@@ -291,12 +336,72 @@ figure {
     margin-top: var(--margin-xl);
     margin-left: 0;
   }
-
+  /* Reverse order of section column */
   .bitad-reverse {
     flex-direction: column-reverse;
   }
   .bitad-reverse .wp-block-column:not(:first-child) {
     margin-top: 0;
     margin-left: 0;
+  }
+  /* Hide line form menu */
+  .bitad-nav-links {
+    display: none;
+  }
+  #bitad-hamburger {
+    display: inline-block;
+  }
+  /* Open hamburger menu */
+  .bitad-open {
+    z-index: 1;
+    overflow-y: auto;
+    height: 100vh;
+    background-color: var(--color-lgray);
+  }
+  .bitad-open .bitad-nav-links {
+    display: block;
+    position: absolute;
+    top: var(--hero-margin-top);
+    left: var(--margin-xs);
+  }
+  .bitad-open .bitad-nav-links li {
+    display: block;
+    margin-bottom: 40px;
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+    font-weight: bold;
+  }
+  /* Remove border (button style) from link */
+  .bitad-open .bitad-button a {
+    padding: 0;
+    border: none;
+    text-align: left;
+    position: relative;
+  }
+  .bitad-open .bitad-button a::after {
+    position: absolute;
+    top: 20px;
+    right: -23px;
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: var(--color-black);
+  }
+  .bitad-open .bitad-button:hover a::after {
+    background-color: var(--color-blue);
+  }
+
+  /* Hamburger animation */
+  .bitad-open .bitad-hamburger-inner {
+    transform: translate3d(0, 8px, 0) rotate(45deg);
+  }
+  .bitad-open .bitad-hamburger-inner::before {
+    content: "";
+    transform: translate3d(0, -16px, 0) rotate(-90deg);
+  }
+  .bitad-open .bitad-hamburger-inner::after {
+    transform: translate3d(0, -8px, 0) rotate(-45deg);
+    opacity: 0;
   }
 }

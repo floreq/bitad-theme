@@ -22,8 +22,6 @@ Tags: bitad
   padding: 0;
 }
 .widget_media_gallery .gallery-item .gallery-icon img {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
   width: 100%;
   height: auto;
 }

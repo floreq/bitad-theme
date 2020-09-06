@@ -122,7 +122,6 @@ function bitad_sidebar_registration()
 		)
 	);
 }
-
 add_action('widgets_init', 'bitad_sidebar_registration');
 
 /**
@@ -132,15 +131,26 @@ function bitad_register_styles()
 {
 
 	$theme_version = wp_get_theme()->get('Version');
-	wp_enqueue_style('style', get_stylesheet_uri(), array(), $theme_version);
 
-	// wp_enqueue_style( 'style-name', get_stylesheet_uri() );
-	wp_enqueue_style('style', get_template_directory_uri(), array(), $theme_version, 'all');
+	wp_enqueue_style('style', get_stylesheet_uri(), array(), $theme_version, 'all');
 	wp_enqueue_style('fonts', get_template_directory_uri() . '/assets/css/fonts.css', null, $theme_version, 'all');
 	wp_enqueue_style('layout', get_template_directory_uri() . '/assets/css/layout.css', null, $theme_version, 'all');
 	wp_enqueue_style('typography', get_template_directory_uri() . '/assets/css/typography.css', null, $theme_version, 'all');
 }
 add_action('wp_enqueue_scripts', 'bitad_register_styles');
+
+/**
+ * Register and Enqueue Scripts.
+ */
+function bitad_footer_register_scripts() {
+
+	$theme_version = wp_get_theme()->get( 'Version' );
+
+	wp_enqueue_script( 'hamburger-menu', get_template_directory_uri() . '/assets/js/hamburger-menu.js', array(), $theme_version, false );
+
+}
+
+add_action( 'wp_footer', 'bitad_footer_register_scripts' );
 
 /**
  * Enqueue supplemental block editor styles.

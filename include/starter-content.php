@@ -24,7 +24,7 @@ function bitad_get_starter_content()
 		'widgets'     => array(
 			// Place one core-defined widgets in the first footer widget area.
 			'footer' => array(
-				'text_about0'         => array(
+				'widget_menu'         => array(
 					'nav_menu',
 					array(
 						'title'  => _x( 'Reset', 'bitad' ),
@@ -33,7 +33,7 @@ function bitad_get_starter_content()
 					'filter' => true,
 					'visual' => true,
 				),
-				'text_about1'         => array(
+				'widget_patrons'         => array(
 					'media_gallery',
 					array(
 						'title'  => _x( 'Patroni', 'bitad' ),
@@ -42,7 +42,7 @@ function bitad_get_starter_content()
 					'filter' => true,
 					'visual' => true,
 				),
-				'text_about2' => array(
+				'widget_contact_info' => array(
 					'text',
 					array(
 						'title'  => _x( 'Dane kontaktowe', 'bitad' ),
@@ -57,7 +57,7 @@ function bitad_get_starter_content()
 						'visual' => true,
 					),
 				),
-				'text_about3'         => array(
+				'widget_registration_info'         => array(
 					'text',
 					array(
 						'title'  => _x( 'Dołącz do nas', 'bitad' ),
@@ -72,7 +72,7 @@ function bitad_get_starter_content()
 						'visual' => true,
 					),
 				),
-				'text_about4'         => array(
+				'widget_social_info'         => array(
 					'text',
 					array(
 						'title'  => _x( 'Poznaj nas bliżej!', 'bitad' ),
@@ -358,7 +358,21 @@ function bitad_get_starter_content()
 			'footer-menu'  => array(
 				'name'  => __('Footer Menu', 'bitad'),
 				'items' => array(
-					'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
+					'link_home'	=> array(
+						'type'  => 'custom',
+						'title' => _x( 'O konferencji', 'bitad' ),
+						'url'   => home_url( '/' ),
+					),
+					'anchor_sponsors'       => array(
+						'type'  => 'custom',
+						'title' => _x( 'Sponsorzy', 'bitad' ),
+						'url'   => get_site_url() . "/#sponsorzy",
+					),
+					'page_agenda'	=> array(
+						'type'  => 'custom',
+						'title' 	=> _x( 'Agenda', 'bitad' ),
+						'url'   	=> get_site_url() . "/agenda",
+					),
 				),
 			),
 		),
