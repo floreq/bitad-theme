@@ -103,7 +103,7 @@ p {
   margin-bottom: var(--margin-xs);
 }
 
-.bitad-center .wp-block-group__inner-container > p,
+.bitad-center > .wp-block-group__inner-container > p,
 .half-right {
   margin-bottom: var(--margin-xl);
 }
