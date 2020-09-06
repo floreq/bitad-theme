@@ -24,8 +24,63 @@ function bitad_get_starter_content()
 		'widgets'     => array(
 			// Place one core-defined widgets in the first footer widget area.
 			'footer' => array(
-				'text_about',
-				'text_contact',
+				'text_about0'         => array(
+					'nav_menu',
+					array(
+						'title'  => _x( 'Reset', 'bitad' ),
+						'text'   => _x( '', 'bitad' ),
+					),
+					'filter' => true,
+					'visual' => true,
+				),
+				'text_about1'         => array(
+					'media_gallery',
+					array(
+						'title'  => _x( 'Patroni', 'bitad' ),
+						'text'   => _x( '', 'bitad' ),
+					),
+					'filter' => true,
+					'visual' => true,
+				),
+				'text_about2' => array(
+					'text',
+					array(
+						'title'  => _x( 'Dane kontaktowe', 'bitad' ),
+						'text'   => join(
+							'',
+							array(
+								_x( 'Reset,', 'bitad' ) . "\n" . _x( 'Willowa 2,', 'bitad' ) . "\n" . _x( 'Bielsko-Biała 43-300', 'bitad' ) . "\n\n",
+								'<a class="mail" href="mailto:reset@ath.bielsko.pl">' . _x( 'reset@ath.bielsko.pl', 'bitad' ) . '</a>',
+							)
+						),
+						'filter' => true,
+						'visual' => true,
+					),
+				),
+				'text_about3'         => array(
+					'text',
+					array(
+						'title'  => _x( 'Dołącz do nas', 'bitad' ),
+						'text'   => join(
+							'',
+							array(
+								_x( 'Zarejestruj się i zostań uczestnikiem konferencji Beskid IT Academic Day już teraz. Nie zwlekaj, miejsca są ograniczone.', 'bitad' ) . "\n\n",
+								'<a class="bitad-button" href="' . get_site_url() . '/rejestracja">' . _x( 'Rejestracja', 'bitad' ) . '</a>',
+							)
+						),
+						'filter' => true,
+						'visual' => true,
+					),
+				),
+				'text_about4'         => array(
+					'text',
+					array(
+						'title'  => _x( 'Poznaj nas bliżej!', 'bitad' ),
+						'text'   => _x( 'Znajdziesz nas również w mediach społecznościowych.', 'bitad' ),
+						'filter' => true,
+						'visual' => true,
+					),
+				),
 			)
 		),
 		// Specify the core-defined pages to create and add custom thumbnails to some of them.
@@ -145,7 +200,7 @@ function bitad_get_starter_content()
 						'<!-- /wp:image --></div></div>',
 						'<!-- /wp:group -->',
 						'<!-- wp:group {"className":"bitad-section half-neutral"} -->',
-						'<div id="sponsors" class="wp-block-group bitad-section half-neutral"><div class="wp-block-group__inner-container"><!-- wp:columns {"className":"bitad-reverse"} -->',
+						'<div id="sponsorzy" class="wp-block-group bitad-section half-neutral"><div class="wp-block-group__inner-container"><!-- wp:columns {"className":"bitad-reverse"} -->',
 						'<div class="wp-block-columns bitad-reverse"><!-- wp:column -->',
 						'<div class="wp-block-column"><!-- wp:heading {"level":4} -->',
 						'<h4>Diamentowi sponsorzy</h4>',
@@ -274,14 +329,48 @@ function bitad_get_starter_content()
 		// Set up nav menus for each of the two areas registered in the theme.
 		'nav_menus'   => array(
 			// Assign a menu to the "primary" location.
-			'primary'  => array(
+			'primary-menu'  => array(
 				'name'  => __('Primary Menu', 'bitad'),
+				'items' => array(
+					'link_home'	=> array(
+						'type'  => 'custom',
+						'title' => _x( 'O konferencji', 'bitad' ),
+						'url'   => home_url( '/' ),
+					),
+					'anchor_sponsors'       => array(
+						'type'  => 'custom',
+						'title' => _x( 'Sponsorzy', 'bitad' ),
+						'url'   => get_site_url() . "/#sponsorzy",
+					),
+					'page_agenda'	=> array(
+						'type'  => 'custom',
+						'title' 	=> _x( 'Agenda', 'bitad' ),
+						'url'   	=> get_site_url() . "/agenda",
+					),
+					'page_registration' => array(
+						'type'  => 'custom',
+						'title' 		=> _x( 'Rejestracja', 'bitad' ),
+						'url'   		=> get_site_url() . "/rejestracja",
+						'classes' 		=> 'bitad-button',
+					),
+				),
+			),
+			'footer-menu'  => array(
+				'name'  => __('Footer Menu', 'bitad'),
 				'items' => array(
 					'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
 				),
 			),
 		),
 	);
+
+	// Change permalink setting
+	// https://www.isitwp.com/set-permalink-settings-from-functions-php/
+	function set_permalink(){
+		global $wp_rewrite;
+		$wp_rewrite->set_permalink_structure('/%postname%/');
+	}
+	add_action('init', 'set_permalink');
 
 	/**
 	 * Filters Bitad array of starter content.

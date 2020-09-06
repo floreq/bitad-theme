@@ -20,7 +20,7 @@
 	<?php wp_body_open(); ?>
 	<header>
 		<?php
-		if (has_nav_menu('primary')) {
+		if (has_nav_menu('primary-menu')) {
 		?>
 			<nav class="bitad-nav">
 				<div class="bitad-container">
@@ -31,21 +31,12 @@
 							array(
 								'container'  => '',
 								'items_wrap' => '%3$s',
-								'theme_location' => 'primary',
+								'theme_location' => 'primary-menu',
 							)
 						);
-						$enable_registration_link = get_theme_mod('enable_registration_link', true);
-						if (true === $enable_registration_link) {
-						?>
-							<li class="menu-item">
-								<a href="<?php print(get_permalink(get_page_by_path('rejestracja')));  ?>" class="bitad-button">Rejestracja</a>
-							</li>
-						<?php
-						}
 						?>
 					</ul>
 				</div>
-
 			</nav>
 		<?php
 		}

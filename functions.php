@@ -90,42 +90,10 @@ function bitad_setup()
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus(
 		array(
-			'primary' => __('Primary Menu', 'bitad'),
+			'primary-menu' => __('Primary Menu', 'bitad'),
+			'footer-menu' => __('Footer Menu', 'bitad'),
 		)
 	);
-
-	/**
-	 * Add Extra Settings to Customizer Sections
-	 *
-	 * @link https://wordpress.stackexchange.com/questions/136106/adding-checkbox-to-theme-customizer
-	 */
-	function bitad_customize($wp_customize)
-	{
-		$wp_customize->add_section(
-			'theme_options',
-			array(
-				'title' => 'Theme Options',
-			)
-		);
-
-		$wp_customize->add_setting(
-			'enable_registration_link',
-			array(
-				'default'	=> true,
-				'transport'	=> 'postMessage'
-			)
-		);
-
-		$wp_customize->add_control(
-			'enable_registration_link',
-			array(
-				'section'	=> 'theme_options',
-				'label'   	=> 'Show Registration Link',
-				'type'      => 'checkbox'
-			)
-		);
-	}
-	add_action('customize_register', 'bitad_customize');
 }
 add_action('after_setup_theme', 'bitad_setup');
 
@@ -246,7 +214,7 @@ function bitad_register_block_patterns()
 				'description'	=> _x('???', 'Block pattern description', 'bitad'),
 				'categories'  	=> array('bitad_paterns'),
 				// 'content'		=> "<!-- wp:columns -->\n<div class=\"wp-block-columns\"><!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:heading {\"level\":4} -->\n<h4>Diamentowi sponsorzy</h4>\n<!-- /wp:heading -->\n\n<!-- wp:gallery {\"ids\":[],\"columns\":0,\"imageCrop\":false,\"sizeSlug\":\"full\"} -->\n<figure class=\"wp-block-gallery columns-0\"><ul class=\"blocks-gallery-grid\"></ul></figure>\n<!-- /wp:gallery -->\n\n<!-- wp:heading {\"level\":4} -->\n<h4>Złoci sponsorzy</h4>\n<!-- /wp:heading -->\n\n<!-- wp:gallery {\"ids\":[],\"imageCrop\":false} -->\n<figure class=\"wp-block-gallery columns-0\"><ul class=\"blocks-gallery-grid\"></ul></figure>\n<!-- /wp:gallery -->\n\n<!-- wp:heading {\"level\":4} -->\n<h4>Srebrni sponsorzy</h4>\n<!-- /wp:heading -->\n\n<!-- wp:gallery -->\n<figure class=\"wp-block-gallery columns-0 is-cropped\"><ul class=\"blocks-gallery-grid\"></ul></figure>\n<!-- /wp:gallery --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:heading {\"level\":2} -->\n<h2>Konferencja jest<br>możliwa dzięki Nim!</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Podjęliśmy się organizacji konferencji Beskid IT Academic Day na Akademii Techniczno-Humanistycznej w Bielsku-Białej.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Nieustannie staramy się rozwijać nasz event, jednocześnie dbając o to, aby uczestnicy, zarówno profesjonaliści, jak i amatorzy, wynieśli z tego dnia ogromne pokłady wiedzy.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Jak i motywacji do jej dalszego poszerzania. Dodatkowo dbamy o to, aby to piątkowe spotkanie.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->",
-				'content'		=> "<!-- wp:group {\"className\":\"bitad-section half-neutral\"} -->\n<div id=\"sponsors\" class=\"wp-block-group bitad-section half-neutral\"><div class=\"wp-block-group__inner-container\"><!-- wp:columns {\"className\":\"bitad-reverse\"} -->\n<div class=\"wp-block-columns bitad-reverse\"><!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:heading {\"level\":4} -->\n<h4>Diamentowi sponsorzy</h4>\n<!-- /wp:heading -->\n\n<!-- wp:gallery {\"ids\":[],\"columns\":0,\"imageCrop\":false,\"sizeSlug\":\"full\",\"align\":\"center\",\"className\":\"bitad-sponsors-gallery\"} -->\n<figure class=\"wp-block-gallery aligncenter columns-0  bitad-sponsors-gallery\"><ul class=\"blocks-gallery-grid\"></ul></figure>\n<!-- /wp:gallery -->\n\n<!-- wp:heading {\"level\":4} -->\n<h4>Złoci sponsorzy</h4>\n<!-- /wp:heading -->\n\n<!-- wp:gallery {\"ids\":[],\"columns\":0,\"imageCrop\":false,\"align\":\"center\",\"className\":\"bitad-sponsors-gallery\"} -->\n<figure class=\"wp-block-gallery aligncenter columns-0  bitad-sponsors-gallery\"><ul class=\"blocks-gallery-grid\"></ul></figure>\n<!-- /wp:gallery -->\n\n<!-- wp:heading {\"level\":4} -->\n<h4>Srebrni sponsorzy</h4>\n<!-- /wp:heading -->\n\n<!-- wp:gallery {\"ids\":[],\"columns\":0,\"imageCrop\":false,\"sizeSlug\":\"full\",\"align\":\"center\",\"className\":\"bitad-sponsors-gallery\"} -->\n<figure class=\"wp-block-gallery aligncenter columns-0  bitad-sponsors-gallery\"><ul class=\"blocks-gallery-grid\"></ul></figure>\n<!-- /wp:gallery --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:heading -->\n<h2>Konferencja jest<br>możliwa dzięki Nim!</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Podjęliśmy się organizacji konferencji Beskid IT Academic Day na Akademii Techniczno-Humanistycznej w Bielsku-Białej.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Nieustannie staramy się rozwijać nasz event, jednocześnie dbając o to, aby uczestnicy, zarówno profesjonaliści, jak i amatorzy, wynieśli z tego dnia ogromne pokłady wiedzy.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Jak i motywacji do jej dalszego poszerzania. Dodatkowo dbamy o to, aby to piątkowe spotkanie.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></div></div>\n<!-- /wp:group -->",
+				'content'		=> "<!-- wp:group {\"className\":\"bitad-section half-neutral\"} -->\n<div id=\"sponsorzy\" class=\"wp-block-group bitad-section half-neutral\"><div class=\"wp-block-group__inner-container\"><!-- wp:columns {\"className\":\"bitad-reverse\"} -->\n<div class=\"wp-block-columns bitad-reverse\"><!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:heading {\"level\":4} -->\n<h4>Diamentowi sponsorzy</h4>\n<!-- /wp:heading -->\n\n<!-- wp:gallery {\"ids\":[],\"columns\":0,\"imageCrop\":false,\"sizeSlug\":\"full\",\"align\":\"center\",\"className\":\"bitad-sponsors-gallery\"} -->\n<figure class=\"wp-block-gallery aligncenter columns-0  bitad-sponsors-gallery\"><ul class=\"blocks-gallery-grid\"></ul></figure>\n<!-- /wp:gallery -->\n\n<!-- wp:heading {\"level\":4} -->\n<h4>Złoci sponsorzy</h4>\n<!-- /wp:heading -->\n\n<!-- wp:gallery {\"ids\":[],\"columns\":0,\"imageCrop\":false,\"align\":\"center\",\"className\":\"bitad-sponsors-gallery\"} -->\n<figure class=\"wp-block-gallery aligncenter columns-0  bitad-sponsors-gallery\"><ul class=\"blocks-gallery-grid\"></ul></figure>\n<!-- /wp:gallery -->\n\n<!-- wp:heading {\"level\":4} -->\n<h4>Srebrni sponsorzy</h4>\n<!-- /wp:heading -->\n\n<!-- wp:gallery {\"ids\":[],\"columns\":0,\"imageCrop\":false,\"sizeSlug\":\"full\",\"align\":\"center\",\"className\":\"bitad-sponsors-gallery\"} -->\n<figure class=\"wp-block-gallery aligncenter columns-0  bitad-sponsors-gallery\"><ul class=\"blocks-gallery-grid\"></ul></figure>\n<!-- /wp:gallery --></div>\n<!-- /wp:column -->\n\n<!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:heading -->\n<h2>Konferencja jest<br>możliwa dzięki Nim!</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Podjęliśmy się organizacji konferencji Beskid IT Academic Day na Akademii Techniczno-Humanistycznej w Bielsku-Białej.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Nieustannie staramy się rozwijać nasz event, jednocześnie dbając o to, aby uczestnicy, zarówno profesjonaliści, jak i amatorzy, wynieśli z tego dnia ogromne pokłady wiedzy.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Jak i motywacji do jej dalszego poszerzania. Dodatkowo dbamy o to, aby to piątkowe spotkanie.</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns --></div></div>\n<!-- /wp:group -->",
 			)
 		);
 		register_block_pattern(

@@ -46,19 +46,21 @@ a {
   color: var(--color-black);
 }
 .bitad-nav a:hover,
-.bitad-footer-widgets .widget_nav_menu a:hover,
-.bitad-button:hover {
+.bitad-footer-widgets .widget_nav_menu a:hover {
   color: var(--color-blue);
 }
 
-.bitad-button {
+.bitad-button > a,
+a.bitad-button {
   display: inline-block;
   padding: var(--margin-xxs) var(--margin-xs);
   border: var(--border);
   border-radius: 14px;
   color: var(--color-black);
 }
-.bitad-button:hover {
+.bitad-button:hover,
+.bitad-button:hover > a {
+  color: var(--color-blue);
   border-color: var(--color-blue);
 }
 
