@@ -27,8 +27,8 @@ function bitad_get_starter_content()
 				'widget_menu'         => array(
 					'nav_menu',
 					array(
-						'title'  => _x( 'Reset', 'bitad' ),
-						'text'   => _x( '', 'bitad' ),
+						'title'  => _x('Reset', 'bitad'),
+						'text'   => _x('', 'bitad'),
 					),
 					'filter' => true,
 					'visual' => true,
@@ -36,8 +36,8 @@ function bitad_get_starter_content()
 				'widget_patrons'         => array(
 					'media_gallery',
 					array(
-						'title'  => _x( 'Patroni', 'bitad' ),
-						'text'   => _x( '', 'bitad' ),
+						'title'  => _x('Patroni', 'bitad'),
+						'text'   => _x('', 'bitad'),
 					),
 					'filter' => true,
 					'visual' => true,
@@ -45,12 +45,12 @@ function bitad_get_starter_content()
 				'widget_contact_info' => array(
 					'text',
 					array(
-						'title'  => _x( 'Dane kontaktowe', 'bitad' ),
+						'title'  => _x('Dane kontaktowe', 'bitad'),
 						'text'   => join(
 							'',
 							array(
-								_x( 'Reset,', 'bitad' ) . "\n" . _x( 'Willowa 2,', 'bitad' ) . "\n" . _x( 'Bielsko-Biała 43-300', 'bitad' ) . "\n\n",
-								'<a class="mail" href="mailto:reset@ath.bielsko.pl">' . _x( 'reset@ath.bielsko.pl', 'bitad' ) . '</a>',
+								_x('Reset,', 'bitad') . "\n" . _x('Willowa 2,', 'bitad') . "\n" . _x('Bielsko-Biała 43-300', 'bitad') . "\n\n",
+								'<a class="mail" href="mailto:reset@ath.bielsko.pl">' . _x('reset@ath.bielsko.pl', 'bitad') . '</a>',
 							)
 						),
 						'filter' => true,
@@ -60,12 +60,12 @@ function bitad_get_starter_content()
 				'widget_registration_info'         => array(
 					'text',
 					array(
-						'title'  => _x( 'Dołącz do nas', 'bitad' ),
+						'title'  => _x('Dołącz do nas', 'bitad'),
 						'text'   => join(
 							'',
 							array(
-								_x( 'Zarejestruj się i zostań uczestnikiem konferencji Beskid IT Academic Day już teraz. Nie zwlekaj, miejsca są ograniczone.', 'bitad' ) . "\n\n",
-								'<a class="bitad-button" href="' . get_site_url() . '/rejestracja">' . _x( 'Rejestracja', 'bitad' ) . '</a>',
+								_x('Zarejestruj się i zostań uczestnikiem konferencji Beskid IT Academic Day już teraz. Nie zwlekaj, miejsca są ograniczone.', 'bitad') . "\n\n",
+								'<a class="bitad-button" href="' . get_site_url() . '/rejestracja">' . _x('Rejestracja', 'bitad') . '</a>',
 							)
 						),
 						'filter' => true,
@@ -75,8 +75,8 @@ function bitad_get_starter_content()
 				'widget_social_info'         => array(
 					'text',
 					array(
-						'title'  => _x( 'Poznaj nas bliżej!', 'bitad' ),
-						'text'   => _x( 'Znajdziesz nas również w mediach społecznościowych.', 'bitad' ),
+						'title'  => _x('Poznaj nas bliżej!', 'bitad'),
+						'text'   => _x('Znajdziesz nas również w mediach społecznościowych.', 'bitad'),
 						'filter' => true,
 						'visual' => true,
 					),
@@ -92,8 +92,8 @@ function bitad_get_starter_content()
 					'',
 					array(
 						'<!-- wp:group {"className":"bitad-hero"} -->',
-						'<div class="wp-block-group bitad-hero"><div class="wp-block-group__inner-container"><!-- wp:image {"align":"center","width":717,"height":333,"className":"bitad-hero-image"} -->',
-						'<div class="wp-block-image bitad-hero-image"><figure class="aligncenter is-resized"><img src="'. get_theme_file_uri() . '/assets/images/bitad-logo.svg" alt="Bitad Logo" width="717" height="333"/></figure></div>',
+						'<div class="wp-block-group bitad-hero"><div class="wp-block-group__inner-container"><!-- wp:image {"align":"center","width":379,"height":333,"className":"bitad-hero-image"} -->',
+						'<div class="wp-block-image bitad-hero-image"><figure class="aligncenter is-resized"><img src="' . get_theme_file_uri() . '/assets/images/bitad-logo.svg" alt="Bitad Logo" width="379" height="333"/></figure></div>',
 						'<!-- /wp:image -->',
 						'<!-- wp:paragraph {"align":"center","className":"bitad-hero-subtitle"} -->',
 						'<p class="has-text-align-center bitad-hero-subtitle">20 marca 2020, na terenie uczelni ATH w Bielsku-Białej</p>',
@@ -103,7 +103,7 @@ function bitad_get_starter_content()
 						'<!-- /wp:heading -->',
 						'<!-- wp:buttons {"align":"center"} -->',
 						'<div class="wp-block-buttons aligncenter"><!-- wp:button {"borderRadius":16,"style":{"color":{"text":"#4093cd"}},"className":"bitad-hero-button is-style-outline"} -->',
-						'<div class="wp-block-button bitad-hero-button is-style-outline"><a class="wp-block-button__link has-text-color" href="'. get_site_url() .'/rejestracja" style="border-radius:16px;color:#4093cd"><strong>Zapisz się już teraz!</strong></a></div>',
+						'<div class="wp-block-button bitad-hero-button is-style-outline"><a class="wp-block-button__link has-text-color" href="' . get_site_url() . '/rejestracja" style="border-radius:16px;color:#4093cd"><strong>Zapisz się już teraz!</strong></a></div>',
 						'<!-- /wp:button --></div>',
 						'<!-- /wp:buttons --></div></div>',
 						'<!-- /wp:group -->',
@@ -125,7 +125,7 @@ function bitad_get_starter_content()
 						'<!-- /wp:column -->',
 						'<!-- wp:column -->',
 						'<div class="wp-block-column"><!-- wp:image {"align":"center","className":"is-style-default bitad-image-indicator bitad-image-shadow"} -->',
-						'<div class="wp-block-image is-style-default bitad-image-indicator bitad-image-shadow"><figure class="aligncenter"><img src="'. get_theme_file_uri() .'/assets/images/lecture.jpg" alt=""/></figure></div>',
+						'<div class="wp-block-image is-style-default bitad-image-indicator bitad-image-shadow"><figure class="aligncenter"><img src="' . get_theme_file_uri() . '/assets/images/lecture.jpg" alt=""/></figure></div>',
 						'<!-- /wp:image --></div>',
 						'<!-- /wp:column --></div>',
 						'<!-- /wp:columns --></div></div>',
@@ -141,7 +141,7 @@ function bitad_get_starter_content()
 						'<div class="wp-block-columns bitad-elements"><!-- wp:column {"className":"bitad-element bitad-shadow"} -->',
 						'<div class="wp-block-column bitad-element bitad-shadow"><!-- wp:group -->',
 						'<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:image {"align":"center","width":47,"height":44,"className":"is-style-default"} -->',
-						'<div class="wp-block-image is-style-default"><figure class="aligncenter is-resized"><img src="'. get_theme_file_uri() .'/assets/images/gift.svg" alt="Gift" width="47" height="44"/></figure></div>',
+						'<div class="wp-block-image is-style-default"><figure class="aligncenter is-resized"><img src="' . get_theme_file_uri() . '/assets/images/gift.svg" alt="Gift" width="47" height="44"/></figure></div>',
 						'<!-- /wp:image -->',
 						'<!-- wp:heading {"align":"center","level":3} -->',
 						'<h3 class="has-text-align-center">Powitalnej paczki</h3>',
@@ -151,13 +151,13 @@ function bitad_get_starter_content()
 						'<!-- /wp:paragraph --></div></div>',
 						'<!-- /wp:group -->',
 						'<!-- wp:paragraph {"align":"center"} -->',
-						'<p class="has-text-align-center"><a href="'. get_site_url() .'/szczegoly">Dowiedz się więcej</a></p>',
+						'<p class="has-text-align-center"><a href="' . get_site_url() . '/szczegoly">Dowiedz się więcej</a></p>',
 						'<!-- /wp:paragraph --></div>',
 						'<!-- /wp:column -->',
 						'<!-- wp:column {"className":"bitad-element bitad-shadow"} -->',
 						'<div class="wp-block-column bitad-element bitad-shadow"><!-- wp:group -->',
 						'<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:image {"align":"center","width":82,"height":44,"className":"is-style-default"} -->',
-						'<div class="wp-block-image is-style-default"><figure class="aligncenter is-resized"><img src="'. get_theme_file_uri() .'/assets/images/keyboard.svg" alt="Keyboard" width="82" height="44"/></figure></div>',
+						'<div class="wp-block-image is-style-default"><figure class="aligncenter is-resized"><img src="' . get_theme_file_uri() . '/assets/images/keyboard.svg" alt="Keyboard" width="82" height="44"/></figure></div>',
 						'<!-- /wp:image -->',
 						'<!-- wp:heading {"align":"center","level":3} -->',
 						'<h3 class="has-text-align-center">Warsztatów</h3>',
@@ -167,13 +167,13 @@ function bitad_get_starter_content()
 						'<!-- /wp:paragraph --></div></div>',
 						'<!-- /wp:group -->',
 						'<!-- wp:paragraph {"align":"center"} -->',
-						'<p class="has-text-align-center"><a href="'. get_site_url() .'/szczegoly">Dowiedz się więcej</a></p>',
+						'<p class="has-text-align-center"><a href="' . get_site_url() . '/szczegoly">Dowiedz się więcej</a></p>',
 						'<!-- /wp:paragraph --></div>',
 						'<!-- /wp:column -->',
 						'<!-- wp:column {"className":"bitad-element bitad-shadow"} -->',
 						'<div class="wp-block-column bitad-element bitad-shadow"><!-- wp:group -->',
 						'<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:image {"align":"center","width":90,"height":44,"className":"is-style-default"} -->',
-						'<div class="wp-block-image is-style-default"><figure class="aligncenter is-resized"><img src="'. get_theme_file_uri() .'/assets/images/gamepad.svg" alt="Gamepad" width="90" height="44"/></figure></div>',
+						'<div class="wp-block-image is-style-default"><figure class="aligncenter is-resized"><img src="' . get_theme_file_uri() . '/assets/images/gamepad.svg" alt="Gamepad" width="90" height="44"/></figure></div>',
 						'<!-- /wp:image -->',
 						'<!-- wp:heading {"align":"center","level":3} -->',
 						'<h3 class="has-text-align-center">Gry QR Code</h3>',
@@ -183,7 +183,7 @@ function bitad_get_starter_content()
 						'<!-- /wp:paragraph --></div></div>',
 						'<!-- /wp:group -->',
 						'<!-- wp:paragraph {"align":"center"} -->',
-						'<p class="has-text-align-center"><a href="'. get_site_url() .'/szczegoly">Dowiedz się więcej</a></p>',
+						'<p class="has-text-align-center"><a href="' . get_site_url() . '/szczegoly">Dowiedz się więcej</a></p>',
 						'<!-- /wp:paragraph --></div>',
 						'<!-- /wp:column --></div>',
 						'<!-- /wp:columns --></div></div>',
@@ -196,7 +196,7 @@ function bitad_get_starter_content()
 						'<p class="has-text-align-center">Jak i motywacji do jej dalszego poszerzania. Dodatkowo dbamy o to, aby to piątkowe spotkanie było przede wszystkim. Mile spędzonym czasem, dlatego wzbogaciliśmy konferencję o dodatkowe atrakcje.</p>',
 						'<!-- /wp:paragraph -->',
 						'<!-- wp:image {"align":"center"} -->',
-						'<div class="wp-block-image"><figure class="aligncenter"><img src="'. get_theme_file_uri() .'/assets/images/workshop.jpg" alt="Workshop"/></figure></div>',
+						'<div class="wp-block-image"><figure class="aligncenter"><img src="' . get_theme_file_uri() . '/assets/images/workshop.jpg" alt="Workshop"/></figure></div>',
 						'<!-- /wp:image --></div></div>',
 						'<!-- /wp:group -->',
 						'<!-- wp:group {"className":"bitad-section half-neutral"} -->',
@@ -249,7 +249,7 @@ function bitad_get_starter_content()
 						'<div class="wp-block-column bitad-organizer bitad-shadow"><!-- wp:columns {"verticalAlignment":"center","className":"bitad-organizer-profile"} -->',
 						'<div class="wp-block-columns are-vertically-aligned-center bitad-organizer-profile"><!-- wp:column {"verticalAlignment":"center"} -->',
 						'<div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"align":"right","width":68,"height":68,"sizeSlug":"large","className":"is-style-rounded"} -->',
-						'<div class="wp-block-image is-style-rounded"><figure class="alignright size-large is-resized"><img src="'. get_theme_file_uri() .'/assets/images/default-profile-photo.png" alt="" width="68" height="68"/></figure></div>',
+						'<div class="wp-block-image is-style-rounded"><figure class="alignright size-large is-resized"><img src="' . get_theme_file_uri() . '/assets/images/default-profile-photo.png" alt="" width="68" height="68"/></figure></div>',
 						'<!-- /wp:image --></div>',
 						'<!-- /wp:column -->',
 						'<!-- wp:column {"verticalAlignment":"center"} -->',
@@ -269,7 +269,7 @@ function bitad_get_starter_content()
 						'<div class="wp-block-column bitad-organizer bitad-shadow"><!-- wp:columns {"verticalAlignment":"center","className":"bitad-organizer-profile"} -->',
 						'<div class="wp-block-columns are-vertically-aligned-center bitad-organizer-profile"><!-- wp:column {"verticalAlignment":"center"} -->',
 						'<div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"align":"right","width":68,"height":68,"sizeSlug":"large","className":"is-style-rounded"} -->',
-						'<div class="wp-block-image is-style-rounded"><figure class="alignright size-large is-resized"><img src="'. get_theme_file_uri() .'/assets/images/default-profile-photo.png" alt="" width="68" height="68"/></figure></div>',
+						'<div class="wp-block-image is-style-rounded"><figure class="alignright size-large is-resized"><img src="' . get_theme_file_uri() . '/assets/images/default-profile-photo.png" alt="" width="68" height="68"/></figure></div>',
 						'<!-- /wp:image --></div>',
 						'<!-- /wp:column -->',
 						'<!-- wp:column {"verticalAlignment":"center"} -->',
@@ -289,7 +289,7 @@ function bitad_get_starter_content()
 						'<div class="wp-block-column bitad-organizer bitad-shadow"><!-- wp:columns {"verticalAlignment":"center","className":"bitad-organizer-profile"} -->',
 						'<div class="wp-block-columns are-vertically-aligned-center bitad-organizer-profile"><!-- wp:column {"verticalAlignment":"center"} -->',
 						'<div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"align":"right","width":68,"height":68,"sizeSlug":"large","className":"is-style-rounded"} -->',
-						'<div class="wp-block-image is-style-rounded"><figure class="alignright size-large is-resized"><img src="'. get_theme_file_uri() .'/assets/images/default-profile-photo.png" alt="" width="68" height="68"/></figure></div>',
+						'<div class="wp-block-image is-style-rounded"><figure class="alignright size-large is-resized"><img src="' . get_theme_file_uri() . '/assets/images/default-profile-photo.png" alt="" width="68" height="68"/></figure></div>',
 						'<!-- /wp:image --></div>',
 						'<!-- /wp:column -->',
 						'<!-- wp:column {"verticalAlignment":"center"} -->',
@@ -334,22 +334,22 @@ function bitad_get_starter_content()
 				'items' => array(
 					'link_home'	=> array(
 						'type'  => 'custom',
-						'title' => _x( 'O konferencji', 'bitad' ),
-						'url'   => home_url( '/' ),
+						'title' => _x('O konferencji', 'bitad'),
+						'url'   => home_url('/'),
 					),
 					'anchor_sponsors'       => array(
 						'type'  => 'custom',
-						'title' => _x( 'Sponsorzy', 'bitad' ),
+						'title' => _x('Sponsorzy', 'bitad'),
 						'url'   => get_site_url() . "/#sponsorzy",
 					),
 					'page_agenda'	=> array(
 						'type'  => 'custom',
-						'title' 	=> _x( 'Agenda', 'bitad' ),
+						'title' 	=> _x('Agenda', 'bitad'),
 						'url'   	=> get_site_url() . "/agenda",
 					),
 					'page_registration' => array(
 						'type'  => 'custom',
-						'title' 		=> _x( 'Rejestracja', 'bitad' ),
+						'title' 		=> _x('Rejestracja', 'bitad'),
 						'url'   		=> get_site_url() . "/rejestracja",
 						'classes' 		=> 'bitad-button',
 					),
@@ -360,17 +360,17 @@ function bitad_get_starter_content()
 				'items' => array(
 					'link_home'	=> array(
 						'type'  => 'custom',
-						'title' => _x( 'O konferencji', 'bitad' ),
-						'url'   => home_url( '/' ),
+						'title' => _x('O konferencji', 'bitad'),
+						'url'   => home_url('/'),
 					),
 					'anchor_sponsors'       => array(
 						'type'  => 'custom',
-						'title' => _x( 'Sponsorzy', 'bitad' ),
+						'title' => _x('Sponsorzy', 'bitad'),
 						'url'   => get_site_url() . "/#sponsorzy",
 					),
 					'page_agenda'	=> array(
 						'type'  => 'custom',
-						'title' 	=> _x( 'Agenda', 'bitad' ),
+						'title' 	=> _x('Agenda', 'bitad'),
 						'url'   	=> get_site_url() . "/agenda",
 					),
 				),
@@ -380,7 +380,8 @@ function bitad_get_starter_content()
 
 	// Change permalink setting
 	// https://www.isitwp.com/set-permalink-settings-from-functions-php/
-	function set_permalink(){
+	function set_permalink()
+	{
 		global $wp_rewrite;
 		$wp_rewrite->set_permalink_structure('/%postname%/');
 	}

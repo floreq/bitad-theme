@@ -15,7 +15,17 @@
 	<div class="bitad-container">
 		<?php get_template_part('template-parts/footer-widgets'); ?>
 	</div>
+	<div class="bitad-copyrights">
+		<?php
+		echo date_i18n(
+			/* translators: Copyright date format, see https://www.php.net/date */
+			_x('Y', 'copyright date format', 'twentytwenty')
+		);
+		?>
+		<a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+	</div>
 	<?php wp_footer(); ?>
 </footer>
 </body>
+
 </html>

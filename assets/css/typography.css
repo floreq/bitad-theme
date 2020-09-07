@@ -21,6 +21,28 @@
   --border: solid 2px #16334f;
 }
 
+.bitad-light-green {
+  background-color: rgba(10, 209, 143, 0.12);
+}
+.bitad-light-green .wp-block-image {
+  background-color: rgba(10, 209, 143, 0.22);
+  border-color: #0ad18f;
+}
+.bitad-light-purple {
+  background-color: rgba(110, 3, 228, 0.12);
+}
+.bitad-light-purple .wp-block-image {
+  background-color: rgba(110, 3, 228, 0.22);
+  border-color: #6e03e4;
+}
+.bitad-light-pink {
+  background-color: rgba(229, 0, 126, 0.12);
+}
+.bitad-light-pink .wp-block-image {
+  background-color: rgba(229, 0, 126, 0.22);
+  border-color: #e5007e;
+}
+
 @media all and (max-width: 781px) {
   :root {
     --font-size-m: 20px;
@@ -115,7 +137,7 @@ p {
   letter-spacing: -0.1px;
   font-weight: normal;
 }
-.bitad-hero-button .wp-block-button__link {
+.bitad-hero-button > .wp-block-button__link {
   padding: var(--margin-xxs) var(--margin-m);
   font-size: var(--font-size-m);
   letter-spacing: -0.1px;
@@ -128,21 +150,35 @@ p {
 }
 
 .bitad-element p {
-  font-size: var(--font-size-s);
   margin-bottom: var(--margin-m);
 }
-.bitad-element > p {
+
+.bitad-element > p,
+.bitad-organizers p,
+.bitad-organizer-profile h4,
+.bitad-event-credentials p {
   margin-bottom: 0;
 }
 
+.bitad-element p,
 .bitad-organizers,
-.bitad-footer {
+.bitad-footer,
+.bitad-event {
   font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+}
+.bitad-event-credentials p:first-child {
+  line-height: 1.2;
 }
 .bitad-footer p {
   line-height: var(--line-height-s);
   margin-bottom: var(--margin-m);
 }
 .bitad-footer p:last-of-type {
+  margin-bottom: 0;
+}
+
+.bitad-event-coordinate p,
+.bitad-event > .wp-block-group__inner-container > p:last-child {
   margin-bottom: 0;
 }
