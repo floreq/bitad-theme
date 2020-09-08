@@ -83,6 +83,16 @@ figure {
 .bitad-footer-widgets > .widget_nav_menu .menu-footer-menu-container {
   white-space: nowrap;
 }
+.bitad-copyrights {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.bitad-copyrights > .bitad-nav-links {
+  margin-right: var(--margin-m);
+  margin-bottom: var(--margin-xs);
+}
+
 /* Hamburger menu based on https://jonsuh.com/hamburgers/ */
 #bitad-hamburger {
   display: none;
@@ -375,6 +385,9 @@ figure {
   /* Hide line links form menu */
   .bitad-nav-links {
     display: none;
+  }
+  .bitad-copyrights > .bitad-nav-links {
+    display: block;
   }
   #bitad-hamburger {
     display: inline-block;

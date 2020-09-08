@@ -14,16 +14,28 @@
 <footer class="bitad-footer">
 	<div class="bitad-container">
 		<?php get_template_part('template-parts/footer-widgets'); ?>
-	</div>
-	<div class="bitad-copyrights">
-		<?php
-		echo date_i18n(
+		<div class="bitad-copyrights">
+			<ul class="bitad-nav-links">
+				<?php
+				wp_nav_menu(
+					array(
+						'container'  => '',
+						'items_wrap' => '%3$s',
+						'theme_location' => 'footer-copyrights-menu',
+					)
+				);
+				?>
+			</ul>
+			<?php
 			/* translators: Copyright date format, see https://www.php.net/date */
-			_x('Y', 'copyright date format', 'twentytwenty')
-		);
-		?>
-		<a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+			echo "© " . date_i18n(
+				_x('Y', 'copyright date format', 'bitad')
+			) . " " . get_theme_mod("company_name") . ". Wszelkie prawa zastrzeżone";
+			?>
+
+		</div>
 	</div>
+
 	<?php wp_footer(); ?>
 </footer>
 </body>

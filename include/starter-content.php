@@ -375,6 +375,26 @@ function bitad_get_starter_content()
 					),
 				),
 			),
+			'footer-copyrights-menu'  => array(
+				'name'  => __('Footer Copyrights Menu', 'bitad'),
+				'items' => array(
+					'link_home'	=> array(
+						'type'  => 'custom',
+						'title' => _x('O konferencji', 'bitad'),
+						'url'   => home_url('/'),
+					),
+					'page_policy'       => array(
+						'type'  => 'custom',
+						'title' => _x('Polityka Prywatności', 'bitad'),
+						'url'   => get_site_url() . "/polityka-prywatnosci",
+					),
+					'page_regulations'	=> array(
+						'type'  => 'custom',
+						'title' 	=> _x('Regulamin', 'bitad'),
+						'url'   	=> get_site_url() . "/regulamin",
+					),
+				),
+			),
 		),
 	);
 

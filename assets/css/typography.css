@@ -64,11 +64,11 @@ a {
   text-decoration: none;
   color: var(--color-blue);
 }
-.bitad-nav a,
+.bitad-nav-links a,
 .bitad-footer-widgets .widget_nav_menu a {
   color: var(--color-black);
 }
-.bitad-nav a:hover,
+.bitad-nav-links a:hover,
 .bitad-footer-widgets .widget_nav_menu a:hover {
   color: var(--color-blue);
 }
@@ -181,4 +181,5 @@ p {
 .bitad-event-coordinate p,
 .bitad-event > .wp-block-group__inner-container > p:last-child {
   margin-bottom: 0;
+  line-height: 1.6;
 }
