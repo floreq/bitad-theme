@@ -183,3 +183,14 @@ p {
   margin-bottom: 0;
   line-height: 1.6;
 }
+
+.bitad-timeline-times > span {
+  font-size: var(--root-font-size);
+  justify-self: center;
+}
+.bitad-timeline-times > span:first-child {
+  justify-self: flex-start !important;
+}
+.bitad-timeline-times > span:last-child {
+  justify-self: flex-end !important;
+}
