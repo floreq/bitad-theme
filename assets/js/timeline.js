@@ -33,18 +33,18 @@ const eventPosition = (countReferenceDate, countDateTo) => {
 const event = (event, startTimelineTime, location) => {
   const gridColumnStart = eventPosition(
     startTimelineTime,
-    timelineTimeToDate(splitTimeIntoStartAndEnd(event)[0])
+    timelineTimeToDate(splitTimeIntoStartAndEnd(event.time)[0])
   );
   const gridColumnEnd = eventPosition(
     startTimelineTime,
-    timelineTimeToDate(splitTimeIntoStartAndEnd(event)[1])
+    timelineTimeToDate(splitTimeIntoStartAndEnd(event.time)[1])
   );
-
+  const eventImage = event.image.cloneNode(true); // Clone image
   const eventNode = document.createElement("div");
   eventNode.classList.add("bitad-timeline-event");
   eventNode.style.gridColumnStart = gridColumnStart;
   eventNode.style.gridColumnEnd = gridColumnEnd;
-  eventNode.textContent = event;
+  eventNode.appendChild(eventImage);
   location.appendChild(eventNode);
 };
 
@@ -59,7 +59,7 @@ const setTimelineEvents = (events, startTimelineTime, location) => {
 };
 
 // Split (sort) events based on event time
-const timeDistribution = (events) => {
+const timeDistribution = (times, images) => {
   let timeDistribution = [
     {
       groupedId: 1,
@@ -80,10 +80,16 @@ const timeDistribution = (events) => {
       timedEvents: [],
     },
   ];
-  events.forEach((e) => {
+  // Not ideal, assuming every evnt will have a picture
+  times.forEach((e, i) => {
     // Get time from event
     // e.g. 8:00
     eventTime = e.textContent;
+
+    const eventInf = {
+      time: eventTime,
+      image: images[i],
+    };
     for (let i = 0; i < timeDistribution.length; i++) {
       // Split event time and convert it to date from
       if (
@@ -92,13 +98,13 @@ const timeDistribution = (events) => {
         timelineTimeToDate(splitTimeIntoStartAndEnd(eventTime)[1]) <=
           timeDistribution[i].endTimelineTime
       ) {
-        timeDistribution[i].timedEvents.push(eventTime);
+        timeDistribution[i].timedEvents.push(eventInf);
         break;
       } else if (
         timelineTimeToDate(splitTimeIntoStartAndEnd(eventTime)[0]) <
         timeDistribution[i].endTimelineTime
       ) {
-        timeDistribution[i].timedEvents.push(eventTime);
+        timeDistribution[i].timedEvents.push(eventInf);
       }
     }
   });
@@ -132,14 +138,20 @@ const setTimelineTimes = (startTimelineTime, endTimelineTime, location) => {
   location.appendChild(timelineTimes);
 };
 
+const setTimelineImages = () => {};
+
 function timeline(id) {
   const times = document.querySelectorAll(
     `${id} .bitad-event-coordinate > div:last-child > p`
   );
+  const images = document.querySelectorAll(
+    `${id} .bitad-event-credentials img`
+  );
+  console.log(images);
   const timelineScroll = document.querySelector(
     `${id}-timeline > .bitad-timeline-scroll`
   );
-  timeDistribution(times).forEach((e) => {
+  timeDistribution(times, images).forEach((e) => {
     if (e.timedEvents.length > 0) {
       setTimelineTimes(e.startTimelineTime, e.endTimelineTime, timelineScroll);
       setTimelineEvents(e.timedEvents, e.startTimelineTime, timelineScroll);
