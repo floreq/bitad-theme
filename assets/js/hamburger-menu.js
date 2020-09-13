@@ -4,13 +4,8 @@ const menu = document.querySelector(".bitad-nav");
 const menuLinks = document.querySelectorAll(".bitad-nav-links > li");
 
 hamburger.addEventListener("click", () => {
-  if (menu.classList.contains("bitad-open")) {
-    menu.classList.remove("bitad-open");
-    html.classList.remove("no-scroll");
-  } else {
-    menu.classList.add("bitad-open");
-    html.classList.add("no-scroll");
-  }
+  menu.classList.toggle("bitad-open");
+  html.classList.toggle("no-scroll");
 });
 
 // Relewant when clicked anchor link

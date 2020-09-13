@@ -24,6 +24,9 @@
 .bitad-light-green {
   background-color: rgba(10, 209, 143, 0.12);
 }
+.bitad-timeline-event .bitad-light-green {
+  background-color: rgba(10, 209, 143, 0.22);
+}
 .bitad-light-green .wp-block-image {
   background-color: rgba(10, 209, 143, 0.22);
   border-color: #0ad18f;
@@ -31,12 +34,18 @@
 .bitad-light-purple {
   background-color: rgba(110, 3, 228, 0.12);
 }
+.bitad-timeline-event .bitad-light-purple {
+  background-color: rgba(110, 3, 228, 0.22);
+}
 .bitad-light-purple .wp-block-image {
   background-color: rgba(110, 3, 228, 0.22);
   border-color: #6e03e4;
 }
 .bitad-light-pink {
   background-color: rgba(229, 0, 126, 0.12);
+}
+.bitad-timeline-event .bitad-light-ping {
+  background-color: rgba(229, 0, 126, 0.22);
 }
 .bitad-light-pink .wp-block-image {
   background-color: rgba(229, 0, 126, 0.22);
@@ -178,6 +187,9 @@ p {
   margin-bottom: 0;
 }
 
+.bitad-event > .wp-block-group__inner-container > p {
+  line-height: 1.2;
+}
 .bitad-event-coordinate p,
 .bitad-event > .wp-block-group__inner-container > p:last-child {
   margin-bottom: 0;

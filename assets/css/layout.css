@@ -295,6 +295,9 @@ figure {
   height: 68px;
 }
 
+.bitad-events {
+  margin-bottom: var(--margin-m);
+}
 .bitad-event {
   padding: var(--margin-xs);
   background-color: var(--color-white);
@@ -461,6 +464,9 @@ figure {
   }
 }
 
+.bitad-timelines {
+  margin-bottom: var(--section-margin);
+}
 .bitad-timeline {
   overflow: hidden;
   z-index: 0;
@@ -487,7 +493,7 @@ figure {
 .bitad-timeline-times {
   display: grid;
   grid-template-columns: repeat(18, 1fr);
-  margin-bottom: var(--margin-xxs);
+  margin-bottom: 6px;
   width: var(--max-width);
 }
 /* White separation background in timeline tima bar */
@@ -520,15 +526,35 @@ figure {
   height: 68px;
   display: flex;
   align-items: center;
-  border-radius: 3.666rem;
+  border-radius: 66px;
+  overflow: hidden;
 }
-.break-left {
-  border-radius: 3.666rem 0 0 3.666rem;
+.bitad-timeline-break-left {
+  border-radius: 66px 0 0 66px;
 }
-.break-right {
+.bitad-timeline-break-right {
   grid-column-start: 1 !important;
-  border-radius: 0 3.666rem 3.666rem 0;
+  border-radius: 0 66px 66px 0;
 }
-.break-right > img {
+.bitad-timeline-break-right .wp-block-image img {
   display: none;
+}
+.bitad-timeline-break-right .wp-block-image {
+  border: none;
+}
+.bitad-timeline-event .bitad-event-credentials > .wp-block-column:last-child {
+  display: none;
+}
+.bitad-timeline-event .bitad-event-credentials {
+  margin: 0;
+  width: 100%;
+  height: 68px;
+  border-radius: unset;
+}
+.bitad-timeline-event .bitad-event-credentials .wp-block-image,
+.bitad-timeline-event .bitad-event-credentials figure,
+.bitad-timeline-event .bitad-event-credentials img {
+  background-color: unset;
+  width: 52px;
+  height: 52px;
 }

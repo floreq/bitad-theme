@@ -31,6 +31,14 @@ const eventPosition = (countReferenceDate, countDateTo) => {
 
 // Create timeline event
 const event = (event, startTimelineTime, location) => {
+  // Create event wrapper
+  const eventNode = document.createElement("div");
+  eventNode.classList.add("bitad-timeline-event");
+  // Clone orginal event node from list of events
+  const eventImage = event.body
+    .querySelector(".bitad-event-credentials")
+    .cloneNode(true);
+  // Set location by using CSS Grid
   const gridColumnStart = eventPosition(
     startTimelineTime,
     timelineTimeToDate(splitTimeIntoStartAndEnd(event.time)[0])
@@ -39,11 +47,14 @@ const event = (event, startTimelineTime, location) => {
     startTimelineTime,
     timelineTimeToDate(splitTimeIntoStartAndEnd(event.time)[1])
   );
-  const eventImage = event.image.cloneNode(true); // Clone image
-  const eventNode = document.createElement("div");
-  eventNode.classList.add("bitad-timeline-event");
   eventNode.style.gridColumnStart = gridColumnStart;
   eventNode.style.gridColumnEnd = gridColumnEnd;
+  // Add style of start/ending when event exceeds timeline time
+  if (gridColumnStart < 0) {
+    eventNode.classList.add("bitad-timeline-break-right");
+  } else if (gridColumnEnd > 27 + 1) {
+    eventNode.classList.add("bitad-timeline-break-left");
+  }
   eventNode.appendChild(eventImage);
   location.appendChild(eventNode);
 };
@@ -59,7 +70,7 @@ const setTimelineEvents = (events, startTimelineTime, location) => {
 };
 
 // Split (sort) events based on event time
-const timeDistribution = (times, images) => {
+const timeDistribution = (times, events) => {
   let timeDistribution = [
     {
       groupedId: 1,
@@ -80,15 +91,14 @@ const timeDistribution = (times, images) => {
       timedEvents: [],
     },
   ];
-  // Not ideal, assuming every evnt will have a picture
+  // If event doesn't has time, doesn't get distributed
   times.forEach((e, i) => {
     // Get time from event
     // e.g. 8:00
     eventTime = e.textContent;
-
-    const eventInf = {
+    const eventData = {
       time: eventTime,
-      image: images[i],
+      body: events[i],
     };
     for (let i = 0; i < timeDistribution.length; i++) {
       // Split event time and convert it to date from
@@ -98,13 +108,13 @@ const timeDistribution = (times, images) => {
         timelineTimeToDate(splitTimeIntoStartAndEnd(eventTime)[1]) <=
           timeDistribution[i].endTimelineTime
       ) {
-        timeDistribution[i].timedEvents.push(eventInf);
+        timeDistribution[i].timedEvents.push(eventData);
         break;
       } else if (
         timelineTimeToDate(splitTimeIntoStartAndEnd(eventTime)[0]) <
         timeDistribution[i].endTimelineTime
       ) {
-        timeDistribution[i].timedEvents.push(eventInf);
+        timeDistribution[i].timedEvents.push(eventData);
       }
     }
   });
@@ -113,6 +123,7 @@ const timeDistribution = (times, images) => {
 
 // Create timeline time bars
 const setTimelineTimes = (startTimelineTime, endTimelineTime, location) => {
+  // Create timeline times wrapper
   const timelineTimes = document.createElement("div");
   timelineTimes.classList.add("bitad-timeline-times");
 
@@ -124,45 +135,38 @@ const setTimelineTimes = (startTimelineTime, endTimelineTime, location) => {
     times.push(dateToTimelineTime(new Date(startDate)));
   }
   times.map((e, i) => {
+    // Creatine holder for time
+    const timeNode = document.createElement("span");
     // Proper separating times in grid via gridColumn style
     i *= 2;
     let gridColumnStart = i;
     let gridColumnEnd = i + 2;
-    // Creatine holders for times and appending them to timeline time bar
-    const timeNode = document.createElement("span");
+    // Adding style
     timeNode.style.gridColumnStart = gridColumnStart;
     timeNode.style.gridColumnEnd = gridColumnEnd;
+    // Addint text (time) and appending to timeline times wrapper
     timeNode.innerText = e;
     timelineTimes.appendChild(timeNode);
   });
   location.appendChild(timelineTimes);
 };
 
-const setTimelineImages = () => {};
-
-function timeline(id) {
-  const times = document.querySelectorAll(
-    `${id} .bitad-event-coordinate > div:last-child > p`
-  );
-  const images = document.querySelectorAll(
-    `${id} .bitad-event-credentials img`
-  );
-  console.log(images);
+const timeline = (id) => {
+  // Get timeline wrapper
   const timelineScroll = document.querySelector(
     `${id}-timeline > .bitad-timeline-scroll`
   );
-  timeDistribution(times, images).forEach((e) => {
+  // Get data for timeline events distribution
+  const times = document.querySelectorAll(
+    `${id} .bitad-event-coordinate > div:last-child > p`
+  );
+  // Get events from grid list
+  const events = document.querySelectorAll(`${id} .bitad-event`);
+  // Distribution and placing events
+  timeDistribution(times, events).forEach((e) => {
     if (e.timedEvents.length > 0) {
       setTimelineTimes(e.startTimelineTime, e.endTimelineTime, timelineScroll);
       setTimelineEvents(e.timedEvents, e.startTimelineTime, timelineScroll);
     }
   });
-}
-
-if (document.readyState === "loading") {
-  // Loading hasn't finished yet
-  // document.addEventListener("DOMContentLoaded", timeline("#lectures"));
-} else {
-  // `DOMContentLoaded` has already fired
-  // timeline("#lectures");
-}
+};
