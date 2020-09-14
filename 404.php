@@ -1,36 +1,27 @@
 <?php
+
 /**
- * The template for displaying the 404 template in the Twenty Twenty theme.
+ * The template for displaying the 404 template in the Bitad theme.
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @since Bitad 1.0
  */
 
 get_header();
 ?>
 
-<main id="site-content" role="main">
+<main>
+	<div class="wp-block-group bitad-404 bitad-center">
+		<div class="wp-block-group__inner-container">
+			<h1 class="has-text-align-center">Coś poszło nie tak...</h1>
+			<p class="has-text-align-center bitad-hero-subtitle">Strona której szukasz nie istnieje. Sprawdź adres URL po względem literówek. Jeśli nadal masz problem to spróbuj wrócić na stronę główną konferencji.</p>
+			<div class="wp-block-buttons aligncenter">
+				<div class="wp-block-button bitad-hero-button is-style-outline"><a class="wp-block-button__link has-text-color" href="/" style="border-radius:16px;color:#4093cd"><strong>Strona Główna</strong></a></div>
+			</div>
+		</div>
+	</div>
+</main>
 
-	<div class="section-inner thin error404-content">
-
-		<h1 class="entry-title"><?php _e( 'Page Not Found', 'twentytwenty' ); ?></h1>
-
-		<div class="intro-text"><p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'twentytwenty' ); ?></p></div>
-
-		<?php
-		get_search_form(
-			array(
-				'label' => __( '404 not found', 'twentytwenty' ),
-			)
-		);
-		?>
-
-	</div><!-- .section-inner -->
-
-</main><!-- #site-content -->
-
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+<?php get_template_part('template-parts/footer-menus-widgets'); ?>
 
 <?php
 get_footer();

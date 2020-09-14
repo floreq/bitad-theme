@@ -109,6 +109,9 @@ h1 {
   font-size: var(--font-size-xxl);
   letter-spacing: 0.2px;
 }
+.bitad-404 h1 {
+  margin-bottom: var(--margin-xs);
+}
 h2 {
   margin-bottom: var(--margin-s);
   font-size: var(--font-size-xl);
@@ -145,6 +148,9 @@ p {
   line-height: var(--line-height-m);
   letter-spacing: -0.1px;
   font-weight: normal;
+}
+.bitad-404 p.bitad-hero-subtitle {
+  max-width: 800px;
 }
 .bitad-hero-button > .wp-block-button__link {
   padding: var(--margin-xxs) var(--margin-m);

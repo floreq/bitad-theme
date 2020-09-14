@@ -127,6 +127,7 @@ figure {
 .bitad-container,
 .bitad-hero > .wp-block-group__inner-container,
 .bitad-small-hero > .wp-block-group__inner-container,
+.bitad-404 > .wp-block-group__inner-container,
 .bitad-section > .wp-block-group__inner-container {
   margin: 0 auto;
   padding: 0 var(--margin-xs);
@@ -134,7 +135,8 @@ figure {
 }
 
 .bitad-hero,
-.bitad-small-hero {
+.bitad-small-hero,
+.bitad-404 {
   padding-top: var(--hero-margin-top);
   padding-bottom: var(--section-margin);
 }
@@ -150,6 +152,12 @@ figure {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: auto 28.3rem;
+}
+.bitad-404 {
+  background-image: url(../images/404-bg.svg);
+  background-repeat: no-repeat;
+  background-position: center -155px;
+  background-size: auto 847px;
 }
 .bitad-hero-image > .alignright {
   float: none;
