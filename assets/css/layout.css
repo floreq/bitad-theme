@@ -169,7 +169,7 @@ figure {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }
-.bitad-hero-image {
+.bitad-hero .bitad-hero-image {
   margin-bottom: var(--margin-xxl);
 }
 .bitad-hero-image img {
